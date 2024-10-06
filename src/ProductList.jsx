@@ -273,8 +273,23 @@ function ProductList() {
             </div>
         </div>
         {!showCart? (
-            <div className="product-grid">
-
+            <div>
+                {plantsArray.map((category, categoryIndex) => (
+                    <div className='product-category' key={categoryIndex}>
+                        <h1><div>{category.category}</div></h1>
+                        <div className='product-list'>
+                            {category.plants.map((plant, plantIndex) => (
+                                <div className='product-card' key={plantIndex}>
+                                    <img className='product-image' src={plant.image} alt={plant.name} />
+                                    <div className='product-title'>{plant.name}</div>
+                                    <div className='product-description'>{plant.description}</div>
+                                    <div className='product-price'>{plant.cost}</div>
+                                    <button className='product-button'>Add to Cart</button>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
             </div>
         ):(
             <CartItem onContinueShopping={handleContinueShopping}/>
