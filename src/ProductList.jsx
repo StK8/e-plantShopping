@@ -262,7 +262,7 @@ function ProductList() {
         dispatch(addItem(plant));
         setAddedToCart((prevState) => ({
             ...prevState,
-            [product.name]: true,
+            [plant.name]: true,
         }));
     };
 
