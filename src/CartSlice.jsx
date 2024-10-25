@@ -27,7 +27,7 @@ export const CartSlice = createSlice({
 
     updateQuantity: (state, action) => {
         const {name, quantity} = action.payload;
-        updatedPlant = state.items.find(plant => plant.name === name);
+        const updatedPlant = state.items.find(plant => plant.name === name);
         if (updatedPlant) {
             updatedPlant.quantity = quantity;
         }
