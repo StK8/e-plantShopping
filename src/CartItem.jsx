@@ -75,5 +75,7 @@ const CartItem = ({ onContinueShopping }) => {
 };
 
 export default CartItem;
-
-
+// calculate total number of items in the cart
+const calculateTotalNumberofItems = () => {
+    return cart.reduce((totalNumberOfItems, item) => totalNumberOfItems + item.quantity, 0);
+}
